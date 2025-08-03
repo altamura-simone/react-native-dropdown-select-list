@@ -117,6 +117,10 @@ export interface SelectListProps  {
 
 export interface MultipleSelectListProps  {
     /**
+     * Array of selected keys which will be displayed in the select box
+     */
+    initValue?: string[],
+    /**
     * Fn to set Selected option value which will be stored in your local state
     */
     setSelected: Function,
@@ -159,7 +163,7 @@ export interface MultipleSelectListProps  {
     /**
     * Data which will be iterated as options of select list
     */
-    data: Array<{}>,
+    data: { key: any, value: any }[],
 
     /**
     * The default option of the select list
@@ -184,7 +188,7 @@ export interface MultipleSelectListProps  {
     /**
     * set to false if you dont want to use search functionality
     */
-     searchPlaceholder?: string,
+    searchPlaceholder?: string,
 
     /**
     * Trigger an action when option is selected
@@ -236,6 +240,11 @@ export interface MultipleSelectListProps  {
     * Control the dropdown with this prop
     */
     dropdownShown?: boolean,
+
+    /**
+     * View selected items
+     */
+    selectedShow?: boolean,
 
     /**
     *  Pass any JSX to this prop like Text, Image or Icon to show instead of close icon
